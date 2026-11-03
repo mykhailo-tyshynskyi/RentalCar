@@ -1,0 +1,36 @@
+.header {
+  width: 100%;
+  height: 68px;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--badges);
+  display: flex;
+  justify-content: center;
+ 
+}
+.container {
+  width: 1440;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 120px;
+}
+.logo {
+}
+
+.navbox {
+  display: flex;
+  gap: 32px;
+}
+
+.navlink {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--main);
+}
+
+.active {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: var(--light-blue);
+}
