@@ -13,9 +13,9 @@ export default function Home() {
           fill
           priority
         />
-        <h1>Find your perfect rental car</h1>
-        <p>Reliable and budget-friendly rentals for any journey</p>
-        <Link href="/catalog">View Catalog</Link>
+        <h1 className={css.mainTitle}>Find your perfect rental car</h1>
+        <p className={css.subText}>Reliable and budget-friendly rentals for any journey</p>
+        <Link className={css.btn} href="/catalog">View Catalog</Link>
       </div>
     </div>
   );
