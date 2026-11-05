@@ -9,10 +9,15 @@ import CarsClient from "./CarsClient";
 
 export default async function CatalogPage() {
   const queryClient = new QueryClient();
-  await queryClient.prefetchQuery({
+  await queryClient.infiniteQuery({
     queryKey: ["cars"],
-    queryFn: fetchCars,
-  });
+    queryFn: ({ pageParam }) =>
+      fetchCars({
+        page: pageParam,
+        perPage: 12,
+      }),
+    initialPageParam: 1,
+    });
 
   return (
     <div className={css.container}>

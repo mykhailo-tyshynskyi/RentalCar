@@ -1,0 +1,56 @@
+.loadbtn {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--main);
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--light-blue);
+  border-radius: 12px;
+  padding: 12px 51px;
+  margin-top: 85px;
+  background-color: transparent;
+  transition: border-color 250ms ease;
+}
+
+.loadbtn:hover,
+.loadbtn:focus {
+  border-color: var(--dark-blue);
+}
+
+.loadbtn:active {
+  border-color: var(--dark-blue);
+}
+
+.loadbtn:disabled {
+  cursor: default;
+}
+
+.loadbtn:disabled:hover {
+  transform: none;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid black;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin-left: 10px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .loadbtn {
+    width: auto;
+    padding: auto 12px;
+  }
+}
