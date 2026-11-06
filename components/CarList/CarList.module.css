@@ -6,15 +6,12 @@
 .overlay {
   position: absolute;
   inset: 0;
-  z-index: 999;
-
+  z-index: 997;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background-color: rgb(245, 245, 245,0.8);
 }
-
 
 .list{
 display: grid;
@@ -22,4 +19,8 @@ display: grid;
   column-gap: 32px;
   row-gap: 48px;
   align-items: stretch;
+}
+
+.loading{
+  opacity: 0.2;
 }

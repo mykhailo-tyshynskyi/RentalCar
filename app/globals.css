@@ -33,7 +33,7 @@ body {
   font-family: var(--font-manrope-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--gray-light);
+  background-color: var(--bg);
 }
 
 .header {width: 100%;

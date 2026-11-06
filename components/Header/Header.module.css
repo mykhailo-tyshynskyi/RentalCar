@@ -5,7 +5,8 @@
   border-bottom: 1px solid var(--badges);
   display: flex;
   justify-content: center;
- 
+  position: fixed;
+ z-index: 999;
 }
 .container {
   width: 1440;

@@ -4,9 +4,10 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import { fetchCars } from "@/lib/api/cars";
 import css from './CatalogPage.module.css'
 import LoadMore from "@/components/LoadMore/LoadMore";
-//import FetchMessage from "@/components/FetchMessage/FetchMessage";
+
 
 export default function CarsClient() {
+  
   const {
     data,
     isError,
