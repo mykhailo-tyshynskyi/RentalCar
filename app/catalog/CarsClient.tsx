@@ -9,6 +9,7 @@ import CarFilter from "@/components/CarFilter/CarFilter";
 import { CarFilterValues } from "@/components/CarFilter/CarFilter";
 import { useState } from "react";
 import { Toaster } from "react-hot-toast";
+import NoCarsFound from "@/components/NoCarsFound/NoCarsFound";
 
 export default function CarsClient() {
   // request for filters =================================================
@@ -18,13 +19,14 @@ export default function CarsClient() {
   });
   console.log(filterData);
   // request for cars =================================================
-  const filterInitialVal: CarFilterValues = { };
+  const filterInitialVal: CarFilterValues = {};
   const [filters, setFilters] = useState<CarFilterValues>(filterInitialVal);
   const {
     data,
     isError,
     error,
     isLoading,
+    isSuccess,
     isFetching,
     isFetchingNextPage,
     hasNextPage,
@@ -53,28 +55,27 @@ export default function CarsClient() {
 
   return (
     <div className={css.client}>
-      <CarFilter filters={filterData} onSearch={(query)=>setFilters(query)} />
+      <CarFilter filters={filterData} onSearch={(query) => setFilters(query)} />
       <CarList cars={cars} isLoading={isFetching} />
       <LoadMore
         onLoadMore={fetchNextPage}
         isLoading={isFetchingNextPage}
         hasMore={hasNextPage}
       />
-{!cars&&{}}
+      {isSuccess && cars.length===0 && <NoCarsFound />}
 
       <Toaster
         position="top-center"
         toastOptions={{
           style: {
-            fontSize: '16px',
-            padding: '10px 14px',
-            maxWidth: '360px',
-            width: 'auto',
-            whiteSpace: 'nowrap',
+            fontSize: "16px",
+            padding: "10px 14px",
+            maxWidth: "360px",
+            width: "auto",
+            whiteSpace: "nowrap",
           },
         }}
       />
     </div>
-   
   );
 }

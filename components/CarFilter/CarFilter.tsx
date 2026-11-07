@@ -77,7 +77,7 @@ export default function Filter({ filters, onSearch }: CarFilterProps) {
 
   return (
     <div className={css.container}>
-      <form className={css.form} onSubmit={handleSubmit} onReset={handleReset}>
+      <form id="car-filter" className={css.form} onSubmit={handleSubmit} onReset={handleReset}>
         <div className={css.field}>
           <label htmlFor="brand">Car brend</label>
           <select name="brand" id="brand" defaultValue="">
