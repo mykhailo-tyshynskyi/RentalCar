@@ -67,7 +67,7 @@ export default function CarsClient() {
       <Toaster
         position="top-center"
         toastOptions={{
-          style: {
+                   style: {
             fontSize: "16px",
             padding: "10px 14px",
             maxWidth: "360px",

@@ -37,7 +37,12 @@ export default function CarCard({ car }: CarCardProps) {
           <li>{car.type}</li>
           <li>{`${car.mileage} km`}</li>
         </ul>
-        <Link className={css.btn} href={`/catalog/${car.id}`}>
+        <Link
+          className={css.btn}
+          href={`/catalog/${car.id}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Read more
         </Link>
       </div>
