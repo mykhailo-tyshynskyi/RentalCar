@@ -6,6 +6,9 @@ import { fetchFilters } from "@/lib/api/filters";
 import css from "./CatalogPage.module.css";
 import LoadMore from "@/components/LoadMore/LoadMore";
 import CarFilter from "@/components/CarFilter/CarFilter";
+import { CarFilterValues } from "@/components/CarFilter/CarFilter";
+import { useState } from "react";
+import { Toaster } from "react-hot-toast";
 
 export default function CarsClient() {
   // request for filters =================================================
@@ -13,8 +16,10 @@ export default function CarsClient() {
     queryKey: ["filter"],
     queryFn: fetchFilters,
   });
-console.log(filterData);
+  console.log(filterData);
   // request for cars =================================================
+  const filterInitialVal: CarFilterValues = { };
+  const [filters, setFilters] = useState<CarFilterValues>(filterInitialVal);
   const {
     data,
     isError,
@@ -25,11 +30,12 @@ console.log(filterData);
     hasNextPage,
     fetchNextPage,
   } = useInfiniteQuery({
-    queryKey: ["cars"],
+    queryKey: ["cars", filters],
     queryFn: ({ pageParam }) =>
       fetchCars({
         page: pageParam,
         perPage: 12,
+        filters,
       }),
     initialPageParam: 1,
     // definition of next page
@@ -47,13 +53,28 @@ console.log(filterData);
 
   return (
     <div className={css.client}>
-      <CarFilter filters={filterData} />
+      <CarFilter filters={filterData} onSearch={(query)=>setFilters(query)} />
       <CarList cars={cars} isLoading={isFetching} />
       <LoadMore
         onLoadMore={fetchNextPage}
         isLoading={isFetchingNextPage}
         hasMore={hasNextPage}
       />
+{!cars&&{}}
+
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          style: {
+            fontSize: '16px',
+            padding: '10px 14px',
+            maxWidth: '360px',
+            width: 'auto',
+            whiteSpace: 'nowrap',
+          },
+        }}
+      />
     </div>
+   
   );
 }
