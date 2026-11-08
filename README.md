@@ -71,6 +71,10 @@ If needed, update this value for a different backend.
 
 The frontend communicates with the car rental backend through the configured `NEXT_PUBLIC_API_URL` and fetches catalog data, filter metadata, and booking requests from the `/cars` endpoints.
 
+## Author
+
+Mykhailo Tyshynskyi
+
 ## License
 
 This project is for educational and portfolio use.
