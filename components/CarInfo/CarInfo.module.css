@@ -1,0 +1,61 @@
+.infoWraper{
+  font-weight: 500;
+font-size: 16px;
+line-height: 1.25;
+color: var(--main);  
+}
+
+.mainTitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  color: var(--main);
+  margin-bottom: 8px;
+}
+
+.art{
+    font-weight: 500;
+font-size: 16px;
+line-height: 1.25;
+color: var(--gray);
+margin-left: 16px;
+}
+.location{
+    padding-bottom:16px ;
+}
+.price{
+
+    font-weight: 600;
+font-size: 24px;
+line-height: 1.33;
+color: var(--light-blue);
+padding-bottom: 32px;
+}
+.descr{
+    padding-bottom: 68px;
+}
+
+.subTitle{
+    font-weight: 600;
+font-size: 20px;
+line-height: 1.2;
+margin-bottom: 20px;
+}
+
+.list{
+display: flex;
+flex-direction: column;
+gap:16px;
+}
+
+.border{
+padding-bottom: 24px;
+margin-bottom: 24px;
+border-bottom: 1px solid var(--gray-light);
+}
+
+.list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}

@@ -25,7 +25,7 @@ export default function CarInfoPage() {
           </div>
           <OrderForm id={carId}/>
         </div>
-        <div className={css.boxInfo}><CarInfo/></div>
+        <div className={css.boxInfo}><CarInfo car={data}/></div>
            <Toaster
         position="top-center"
         toastOptions={{
