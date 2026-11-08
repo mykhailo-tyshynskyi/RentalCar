@@ -8,7 +8,6 @@ interface CarCardProps {
 }
 
 export default function CarCard({ car }: CarCardProps) {
-  console.log(car);
 
   return (
     <div className={css.card}>

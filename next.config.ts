@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "ac.goit.global",
         port: "",
-        pathname: "/**", // Дозволяє всі шляхи зображень з цього домена
+        pathname: "/**", 
       },
     ],
   },

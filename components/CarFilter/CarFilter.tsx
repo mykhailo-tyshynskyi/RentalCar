@@ -3,6 +3,9 @@ import css from "./CarFilter.module.css";
 import type { Filter } from "@/types/filter";
 import { SubmitEvent, SyntheticEvent } from "react";
 import { toast } from 'react-hot-toast';
+import Icon from "../Icon/Icon";
+import CustomSelect from "../CustomSelect/CustomSelect";
+import { useState } from "react";
 
 
 interface CarFilterProps {
@@ -18,8 +21,8 @@ export interface CarFilterValues {
 }
 
 export default function Filter({ filters, onSearch }: CarFilterProps) {
-  console.log(filters);
-
+const [brand, setBrand] = useState("");
+const [price, setPrice] = useState("");
   
   // Create ann array of prices, step 10=========================
   const min = filters?.price.min;
@@ -43,9 +46,6 @@ export default function Filter({ filters, onSearch }: CarFilterProps) {
 
     const formData = new FormData(e.currentTarget);
 
-    const brand = formData.get("brand") as string;
-    const price = formData.get("price") as string;
-
     const minMileage = (formData.get("minMileage") as string).trim();
     if (!/^\d+$/.test(minMileage)&& minMileage!=="") {
        toast.error(`Only numbers allowed in "Mileage From" field`);
@@ -67,6 +67,8 @@ export default function Filter({ filters, onSearch }: CarFilterProps) {
   };
 
   const handleReset = (e: SyntheticEvent<HTMLFormElement>) => {
+     setBrand("");
+  setPrice("");
     onSearch({
       brand: undefined,
       price: undefined,
@@ -79,37 +81,41 @@ export default function Filter({ filters, onSearch }: CarFilterProps) {
     <div className={css.container}>
       <form id="car-filter" className={css.form} onSubmit={handleSubmit} onReset={handleReset}>
         <div className={css.field}>
-          <label htmlFor="brand">Car brend</label>
-          <select name="brand" id="brand" defaultValue="">
-            <option value="">Choose a brand</option>
-            {filters?.brands.map((brand) => (
-              <option key={brand} value={brand}>
-                {brand}
-              </option>
-            ))}
-          </select>
+          <label  className={css.label} htmlFor="brand">Car brend</label>
+              <CustomSelect
+    name="brand"
+    options={filters?.brands ?? []}
+    placeholder="Choose a brand"
+    value={brand}
+    onChange={setBrand}
+  />
+
         </div>
         <div className={css.field}>
-          <label htmlFor="price">Price/ 1 hour</label>
-          <select name="price" id="price">
-            <option value="">Choose a price</option>
-            {splitPrices()?.map((price) => (
-              <option key={price} value={price}>
-                {price}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className={css.field}>
-          <label htmlFor="mileage">Сar mileage / km</label>
-          <div className={css.inputWraper}>
-            <input name="minMileage"  placeholder="From"></input>
-            <input name="maxMileage"  placeholder="To"></input>
+          <label className={css.label} htmlFor="price">Price/ 1 hour</label>
+          <div className={css.selectWraper}>
+            <CustomSelect
+    name="price"
+    options={splitPrices()?.map(String) ?? []}
+    placeholder="Choose a price"
+    value={price}
+    onChange={setPrice}
+     formatSelectedValue={(value) => `To $${value}`}
+  />
+      
           </div>
         </div>
-        <button type="submit">Search</button>
-        <button type="reset">Clear filters</button>
-      </form>
+        <div className={css.field}>
+          <label className={css.label} htmlFor="mileage">Сar mileage / km</label>
+          <div className={css.inputWraper}>
+            <input className={css.minMileage} name="minMileage"  placeholder="From"></input>
+            <input className={css.maxMileage} name="maxMileage"  placeholder="To"></input>
+          </div>
+        </div>
+        <div className={css.btnBox}>
+        <button className={css.btn} type="submit">Search</button>
+        <button className={css.btnClear} type="reset">Clear filters</button></div>
+         </form>
     </div>
   );
 }

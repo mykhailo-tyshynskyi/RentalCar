@@ -1,0 +1,33 @@
+.btn {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--main);
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--light-blue);
+  border-radius: 12px;
+  padding: 12px 51px;
+  margin-top: 85px;
+  background-color: transparent;
+  transition: border-color 250ms ease;
+}
+
+.btn:hover,
+.btn:focus {
+  border-color: var(--dark-blue);
+}
+
+.btn:active {
+  border-color: var(--dark-blue);
+}
+
+.btn:disabled {
+  cursor: default;
+}
+
+.btn:disabled:hover {
+  transform: none;
+}

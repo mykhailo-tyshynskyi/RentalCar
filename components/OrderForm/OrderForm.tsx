@@ -69,41 +69,51 @@ export default function OrderForm({ id }: OrderFormProps) {
       <div className={css.fieldsWraper}>
         <div className={`${css.field} ${errors.name ? css.error : ""}`}>
           <div className={css.wraper}>
-          <input type="text" placeholder="Name*" {...register("name")} />
+            <input type="text" placeholder="Name*" {...register("name")} />
             {errors.name && (
-            <Icon className={css.errorIcon} id={"icon-error"} width={24} height={24}/>
-          )}
+              <Icon
+                className={css.errorIcon}
+                id={"icon-error"}
+                width={24}
+                height={24}
+              />
+            )}
           </div>
           {errors.name && (
             <p className={css.errorText}>{errors.name.message}</p>
           )}
-           {errors.name && (
-                    <p className={css.errorLabel}>Name*</p>
-          )}
-       
+          {errors.name && <p className={css.errorLabel}>Name*</p>}
         </div>
         <div className={`${css.field} ${errors.email ? css.error : ""}`}>
           <div className={css.wraper}>
-          <input type="email" placeholder="Email*" {...register("email")} />
-               {errors.email && (
-            <Icon className={css.errorIcon} id={"icon-error"} width={24} height={24}/>
-          )}
+            <input type="email" placeholder="Email*" {...register("email")} />
+            {errors.email && (
+              <Icon
+                className={css.errorIcon}
+                id={"icon-error"}
+                width={24}
+                height={24}
+              />
+            )}
           </div>
           {errors.email && (
-                    <p className={css.errorText}>{errors.email.message}</p>
+            <p className={css.errorText}>{errors.email.message}</p>
           )}
-          {errors.email && (
-                    <p className={css.errorLabel}>Email*</p>
-          )}
+          {errors.email && <p className={css.errorLabel}>Email*</p>}
         </div>
         <div
           className={`${css.fieldComment} ${errors.comment ? css.error : ""}`}
         >
           <div className={css.wraper}>
-          <textarea placeholder="Comment" {...register("comment")} />
-                {errors.comment && (
-            <Icon className={css.errorIcon} id={"icon-error"} width={24} height={24}/>
-          )}
+            <textarea placeholder="Comment" {...register("comment")} />
+            {errors.comment && (
+              <Icon
+                className={css.errorIcon}
+                id={"icon-error"}
+                width={24}
+                height={24}
+              />
+            )}
           </div>
           {errors.comment && (
             <p className={css.errorText}>{errors.comment.message}</p>
@@ -111,7 +121,8 @@ export default function OrderForm({ id }: OrderFormProps) {
         </div>
       </div>
       <button type="submit" className={css.btn}>
-        Send
+        {isPending ? "Sending" : "Send"}
+        {isPending && <div className={css.spinner} />}
       </button>
     </form>
   );

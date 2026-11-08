@@ -1,9 +1,7 @@
 import api from "./api";
 
-
-
 interface FetchFiltersResponse {
-    brands: string[];
+  brands: string[];
   price: {
     min: number;
     max: number;

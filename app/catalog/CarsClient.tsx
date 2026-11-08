@@ -17,7 +17,7 @@ export default function CarsClient() {
     queryKey: ["filter"],
     queryFn: fetchFilters,
   });
-  console.log(filterData);
+
   // request for cars =================================================
   const filterInitialVal: CarFilterValues = {};
   const [filters, setFilters] = useState<CarFilterValues>(filterInitialVal);
@@ -50,7 +50,7 @@ export default function CarsClient() {
     refetchOnMount: false,
   });
   const cars = data?.pages.flatMap((page) => page.cars) ?? [];
-  console.log(cars);
+
   //=============================================================
 
   return (
@@ -62,12 +62,12 @@ export default function CarsClient() {
         isLoading={isFetchingNextPage}
         hasMore={hasNextPage}
       />
-      {isSuccess && cars.length===0 && <NoCarsFound />}
+      {isSuccess && cars.length === 0 && <NoCarsFound />}
 
       <Toaster
         position="top-center"
         toastOptions={{
-                   style: {
+          style: {
             fontSize: "16px",
             padding: "10px 14px",
             maxWidth: "360px",

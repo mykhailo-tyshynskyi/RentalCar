@@ -31,15 +31,14 @@
 }
 
 .field {
-    position: relative;
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
-
 }
 .fieldComment {
   display: flex;
-   flex-direction: column;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -48,16 +47,16 @@
   width: 100%;
   height: 100%;
   border-radius: 12px;
-padding: 12px 20px;
-background-color: var(--inputs);
-border: none;
-outline: none;
+  padding: 12px 20px;
+  background-color: var(--inputs);
+  border: none;
+  outline: none;
 }
-.field input{
-    height: 48px;
+.field input {
+  height: 48px;
 }
-.fieldComment textarea{
-    height: 88px;
+.fieldComment textarea {
+  height: 88px;
 }
 
 .btn {
@@ -81,40 +80,64 @@ outline: none;
   background-color: var(--dark-blue);
 }
 
-.errorText{
-    font-weight: 400;
-font-size: 12px;
-line-height: 1.33;
-color: var(--error);
+.errorText {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--error);
 }
 
-.error input, .error textarea{
-    background-color: var(--error-light);;
-border: 1px solid var(--error);
+.error input,
+.error textarea {
+  background-color: var(--error-light);
+  border: 1px solid var(--error);
 }
 
-.errorLabel{
-    position: absolute;
-    top: -8px;
-    left: 13px;
-border-radius: 8px;
-padding: 0 8px;
-width: 54px;
-height: 16px;
-background: var(--error-light);
-font-weight: 400;
-font-size: 12px;
-line-height: 1.33;
-color: var(--error);
+.errorLabel {
+  position: absolute;
+  top: -8px;
+  left: 13px;
+  border-radius: 8px;
+  padding: 0 8px;
+  width: 54px;
+  height: 16px;
+  background: var(--error-light);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--error);
 }
 
-.errorIcon{
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
+.errorIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .wraper {
-    position: relative;
+  position: relative;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid white;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin-left: 10px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .loadbtn {
+    width: auto;
+    padding: auto 12px;
+  }
 }

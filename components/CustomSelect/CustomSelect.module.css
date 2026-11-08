@@ -1,0 +1,104 @@
+.control {
+  border-radius: 12px !important;
+  padding: 0 16px !important;
+  width: 204px;
+  height: 44px;
+  background: var(--white);
+  border-color: var(--white) !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.dropdownIndicator {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.valueContainer {
+  padding: 0 !important;
+}
+
+.placeholder {
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  line-height: 1.25 !important;
+  color: var(--main) !important;
+}
+
+.singleValue {
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  line-height: 1.25 !important;
+  color: var(--main) !important;
+}
+
+.menu {
+  border-radius: 12px !important;
+  width: 204px !important;
+  max-height: 272px !important;
+  box-shadow: 0 4px 36px 0 rgba(0, 0, 0, 0.02) !important;
+  background: var(--white) !important;
+}
+
+.menuList {
+  border-radius: 12px !important;
+  background-color: var(--white) !important;
+  padding: 14px 18px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.option {
+  padding: 0 !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  line-height: 1.25 !important;
+  color: var(--gray) !important;
+}
+.menuList {
+  border-radius: 12px !important;
+  background-color: var(--white) !important;
+  padding: 14px 18px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.selected {
+  color: var(--main) !important;
+  background: none !important;
+}
+
+.focused {
+  color: var(--main) !important;
+  background: none !important;
+}
+
+.menuList::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+.menuList::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.menuList::-webkit-scrollbar-thumb {
+  background-color: var(--gray-light) !important;
+  border-radius: 10px !important;
+}
+
+.menuList::-webkit-scrollbar-thumb:hover {
+  background-color: var(--main) !important;
+}
+
+.control:hover,
+.control:focus,
+.control:focus-within {
+  outline: none;
+  box-shadow: none;
+  border-color: var(--white) !important;
+}
