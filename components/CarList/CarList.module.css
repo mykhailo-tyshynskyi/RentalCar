@@ -19,6 +19,7 @@ display: grid;
   column-gap: 32px;
   row-gap: 48px;
   align-items: stretch;
+  padding-top: 23px;
 }
 
 .loading{
