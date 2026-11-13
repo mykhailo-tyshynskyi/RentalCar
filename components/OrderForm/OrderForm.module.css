@@ -51,6 +51,7 @@
   background-color: var(--inputs);
   border: none;
   outline: none;
+  resize: none;
 }
 .field input {
   height: 48px;
@@ -78,6 +79,7 @@
 .btn:hover,
 .btn:focus .btn:active {
   background-color: var(--dark-blue);
+  cursor: pointer;
 }
 
 .errorText {

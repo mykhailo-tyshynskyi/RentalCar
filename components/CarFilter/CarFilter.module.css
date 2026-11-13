@@ -48,6 +48,10 @@
   background: none;
 }
 
+.btnClear:hover{
+  cursor: pointer;
+}
+
 .btn {
   font-weight: 600;
   font-size: 16px;
@@ -67,6 +71,7 @@
 .btn:hover,
 .btn:focus .btn:active {
   background-color: var(--dark-blue);
+  cursor: pointer;
 }
 
 .inputWraper {

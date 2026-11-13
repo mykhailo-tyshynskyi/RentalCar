@@ -41,6 +41,7 @@ export default function OrderForm({ id }: OrderFormProps) {
   const { mutate, isPending, data } = useMutation({
     mutationFn: sendOrder,
     onSuccess: (data) => {
+      reset();
       toast.success(data.message);
     },
     onError: () => {
@@ -51,6 +52,7 @@ export default function OrderForm({ id }: OrderFormProps) {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(formSchema),

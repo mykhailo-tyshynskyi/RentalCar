@@ -10,7 +10,7 @@ export default function CarInfo({ car }: CarInfoProps) {
   return (
     <div className={css.infoWraper}>
       <h2 className={css.mainTitle}>
-        {`${car.brand}, ${car.year}`}
+        {`${car.brand} ${car.model}, ${car.year}`}
         <span className={css.art}>{`Article: ${car.stockNumber}`}</span>
       </h2>
       <p className={css.location}>{`${car.location.city}, ${car.location.country}`}</p>

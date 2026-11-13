@@ -22,7 +22,7 @@ html {
 html,
 body {
   width: 100%;
-
+min-height: 100vh;
 }
 
 body {
@@ -52,3 +52,10 @@ a {
 li {list-style: none;
 padding: 0;}
 
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+  align-items: center;
+}
