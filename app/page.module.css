@@ -22,7 +22,7 @@
 }
 
 .mainTitle{
-margin-top: 436px;
+margin-top: auto;
 font-weight: 700;
 font-size: 60px;
 line-height: 1.2;
@@ -37,6 +37,7 @@ margin-top: 16px;
 
 .btn{
   margin-top: 40px;
+  margin-bottom: 60px;
   font-weight: 600;
 font-size: 16px;
 line-height: 1.25;
