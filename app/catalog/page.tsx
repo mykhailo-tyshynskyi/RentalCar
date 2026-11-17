@@ -6,6 +6,12 @@ import {
   dehydrate,
 } from "@tanstack/react-query";
 import CarsClient from "./CarsClient";
+import { Metadata } from "next";
+
+export const metadata:Metadata ={
+  title:"Catalog | Rental Car",
+  description: "Catalog of rental cars with possibility to find the best option for you"
+}
 
 export default async function CatalogPage() {
   const queryClient = new QueryClient();

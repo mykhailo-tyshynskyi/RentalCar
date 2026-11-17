@@ -2,6 +2,13 @@ import css from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import bannerIMG from "@/public/images/banner.jpg";
+import { Metadata } from "next";
+
+export const metadata:Metadata ={
+  title:"Home | Rental Car",
+  description: "Easy way to rent a car"
+}
+
 
 export default function Home() {
   return (
